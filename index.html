@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Page</title>
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    #8B00FF 0%,  /* North - Purple */
+    #FF00FF 50%, /* Center - Pink */
+    #FF0080 100%  /* South - Magenta */
+  );
+}
+
+#chat-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block; /* Automatically display the chat widget */
+}
+</style>
+</head>
+<body>
+<div id="chat-container"></div>
+
+<script type="text/javascript">
+(function(d, t) {
+  var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  v.onload = function() {
+    window.voiceflow.chat.load({
+      verify: { projectID: '667056b758b2d9a7e565888b' },
+      url: 'https://general-runtime.voiceflow.com',
+      versionID: 'production'
+    });
+  }
+  v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+})(document, 'script');
+</script>
+</body>
+</html>
